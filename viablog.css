@@ -1,0 +1,42 @@
+
+        .hero {
+            background-image: url('/assets/image1.jpg');
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+        }
+        
+     
+        .hero {
+            background-image: url('/assets/image1.jpg');
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        
+        .btn-fixed {
+            position: fixed;
+            bottom: 100px;
+            left: 20px;
+            width: 90%;
+            z-index: 1000; 
+        }
+        .avatar {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+}
+
+.filter {
+  padding: 8px 14px;
+  border-radius: 20px;
+  background: #eee;
+  color: #333;
+  cursor: pointer;
+}
+
+.filter.active {
+  background: #2fbf71;
+  color: #fff;
+}
