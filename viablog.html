@@ -35,7 +35,10 @@
             </div>
         </section>
         <section class="px-2 ">
-            <h2 class=" font-semibold">What do you want to read?</h2>
+            <div class="flex justify-between m-5">
+                <h2 class=" font-semibold">What do you want to read?</h2>
+                <button class="mr-2 bg-lime-600 rounded-xl" id="btnAdd"> Ajouter Card</button>
+            </div>
             <div class="flex flex-row md:flex md:justify-center my-2 overflow-y-scroll">
                 <div>
                     <button class="border-2 border-solid w-16 py-1 mx-1 rounded-xl bg-green-600 text-white">All</button>
@@ -48,101 +51,55 @@
             </div>
 
         </section>
-        <section class=" md:w-full">
-            <div class="mx-8 h-[300px] md:h-[50vh]  ">
-                <a href="article.html">
-                    <div
-                        class=" bg-cover bg-center bg-[url('/assets/4.png')] shadow-xl w-full h-full md:h-full md:w-full object-cover rounded-xl">
+        <section id="posts-container" class="md:flex">
 
-                    </div>
-                </a>
-                <div class="flex justify-between items-center   mt-2">
-                    <div>
-                        <h6 class="font-semibold">Yellow Rever</h6>
-                        <p class="text-sm">by Joan Garcia</p>
-                    </div>
-                    <div class="flex space-x-3">
-                        <i class="fa-solid fa-location-dot cursor-pointer"></i>
-                        <i class="fa-regular fa-clock cursor-pointer"></i>
-                        <i class="fa-regular fa-heart cursor-pointer"></i>
-                    </div>
-                </div>
-            </div>
         </section>
-        <section class="md:flex ">
-            <div class="flex flex-wrap align-between md:flex-wrap ">
-                <div class="mx-5 w-[150px] h-[150px] mt-20 mp-20 md:w-[250px]">
-                    <a href="article.html">
-                        <div
-                            class=" bg-cover bg-center bg-[url('/assets/2.png')] shadow-xl w-full h-full md:h-full md:w-full object-cover rounded-xl">
+        <div id="form-container"
+            class="hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+            <form id="trip-form" class="bg-white rounded-2xl shadow-xl p-6 w-80 md:w-96 flex flex-col space-y-4">
+                <h2 class="text-xl font-semibold text-center">Ajouter un Trip</h2>
 
-                        </div>
-                    </a>
-                    <div class="flex justify-between items-center mt-2">
-                        <div>
-                            <h6 class="font-semibold">Yellow Rever</h6>
-                            <p class="text-sm">by Joan Garcia</p>
-                        </div>
-                        <div class="flex space-x-3"> <i class="fa-solid fa-location-dot cursor-pointer"></i> <i
-                                class="fa-regular fa-clock cursor-pointer"></i> <i
-                                class="fa-regular fa-heart cursor-pointer"></i> </div>
-                    </div>
+                <div class="flex flex-col">
+                    <label for="title" class="text-sm font-medium mb-1">Titre</label>
+                    <input type="text" name="title"
+                        class="border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+                        placeholder="Ex: Yellow River">
                 </div>
-                <div class="mx-5 w-[150px] h-[150px] mt-20 mp-20 md:w-[250px]">
-                    <a href="article.html">
-                        <div
-                            class=" bg-cover bg-center bg-[url('/assets/5.png')] shadow-xl w-full h-full md:h-full md:w-full object-cover rounded-xl">
 
-                        </div>
-                    </a>
-                    <div class="flex justify-between items-center mt-2">
-                        <div>
-                            <h6 class="font-semibold">Yellow Rever</h6>
-                            <p class="text-sm">by Joan Garcia</p>
-                        </div>
-                        <div class="flex space-x-3"> <i class="fa-solid fa-location-dot cursor-pointer"></i> <i
-                                class="fa-regular fa-clock cursor-pointer"></i> <i
-                                class="fa-regular fa-heart cursor-pointer"></i> </div>
-                    </div>
+                <div class="flex flex-col">
+                    <label for="author" class="text-sm font-medium mb-1">Auteur</label>
+                    <input type="text" name="author"
+                        class="border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+                        placeholder="Ex: Joan Garcia">
                 </div>
-                <div class="mx-5 w-[150px] h-[150px] mt-20 mp-20 md:w-[250px]">
-                    <a href="article.html">
-                        <div
-                            class=" bg-cover bg-center bg-[url('/assets/1.png')] shadow-xl w-full h-full md:h-full md:w-full object-cover rounded-xl">
 
-                        </div>
-                    </a>
-                    <div class="flex justify-between items-center mt-2">
-                        <div>
-                            <h6 class="font-semibold">Yellow Rever</h6>
-                            <p class="text-sm">by Joan Garcia</p>
-                        </div>
-                        <div class="flex space-x-3"> <i class="fa-solid fa-location-dot cursor-pointer"></i> <i
-                                class="fa-regular fa-clock cursor-pointer"></i> <i
-                                class="fa-regular fa-heart cursor-pointer"></i> </div>
-                    </div>
+                <div class="flex flex-col">
+                    <label for="image" class="text-sm font-medium mb-1">Image URL</label>
+                    <input type="text" name="image"
+                        class="border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+                        placeholder="/assets/4.png">
                 </div>
-                <div class="mx-5 w-[150px] h-[150px] mt-20 mp-20 md:w-[250px]">
-                    <a href="article.html">
-                        <div
-                            class=" bg-cover bg-center bg-[url('/assets/2.png')] shadow-xl w-full h-full md:h-full md:w-full object-cover rounded-xl">
 
-                        </div>
-                    </a>
-                    <div class="flex justify-between items-center mt-2">
-                        <div>
-                            <h6 class="font-semibold">Yellow Rever</h6>
-                            <p class="text-sm">by Joan Garcia</p>
-                        </div>
-                        <div class="flex space-x-3"> <i class="fa-solid fa-location-dot cursor-pointer"></i> <i
-                                class="fa-regular fa-clock cursor-pointer"></i> <i
-                                class="fa-regular fa-heart cursor-pointer"></i> </div>
-                    </div>
+                <div class="flex flex-col">
+                    <label for="category" class="text-sm font-medium mb-1">Catégorie</label>
+                    <select name="category"
+                        class="border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-green-500">
+                        <option value="all">All</option>
+                        <option value="forest">Forest</option>
+                        <option value="beach">Beach</option>
+                        <option value="mountains">Mountains</option>
+                        <option value="road">Road</option>
+                    </select>
                 </div>
-                
 
-            </div>
-        </section>
+                <button type="submit"
+                    class="bg-green-600 text-white font-semibold py-2 rounded-lg hover:bg-green-700 transition-colors">Ajouter</button>
+            </form>
+        </div>
+
+
+
+
     </main>
     <nav class="fixed bottom-0 w-full flex justify-around bg-white shadow-md py-2 rounded-xl md:hidden">
         <div class="bg-green-600 rounded-xl w-10 text-center"> <i class="fa-solid fa-house text-xl cursor-pointer"></i>
@@ -150,6 +107,9 @@
             class="fa-solid fa-location-dot text-xl cursor-pointer"></i>
         <a href="profile.html"><i class="fa-regular fa-user text-xl cursor-pointer"></i></a>
     </nav>
+
+
+    <script src="script.js"></script>
 </body>
 
 </html>
