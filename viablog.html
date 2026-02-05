@@ -13,7 +13,7 @@
     <header class="w-full px-4 py-3 flex items-center justify-between">
         <i class="fa-solid fa-list"></i> <i class="fa-solid fa-magnifying-glass"></i>
     </header>
-    <main class="ml-14">
+    <main>
         <section>
             <h1 class="px-2 font-semibold">Blogger Of The Week</h1>
             <div class="flex flex-row items-center overflow-y-scroll py-10 space-x-4 px-2 md:flex md:justify-center ">
@@ -56,7 +56,7 @@
         </section>
 
         <div id="form-container"
-            class="hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 " onclick="click">
+class="hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
             <form id="trip-form" class="bg-white rounded-2xl shadow-xl p-6 w-80 md:w-96 flex flex-col space-y-4">
                 <h2 class="text-xl font-semibold text-center">Ajouter un Trip</h2>
 
@@ -102,20 +102,15 @@
 
 
     </main>
-    <nav class="fixed top-0 left-0 h-full flex flex-col justify-start bg-white shadow-md py-4 px-2 w-16 md:hidden">
-        <div class="bg-green-600 rounded-xl w-12 mt-48 h-12 flex items-center justify-center mb-4">
-            <i class="fa-solid fa-house text-xl cursor-pointer"></i>
-        </div>
-        <div class="mb-4"><i class="fa-regular fa-heart text-xl cursor-pointer"></i></div>
-        <div class="mb-4"><i class="fa-solid fa-location-dot text-xl cursor-pointer"></i></div>
-        <a href="profile.html">
-            <div class="mb-4"><i class="fa-regular fa-user text-xl cursor-pointer"></i></div>
-        </a>
+    <nav class="fixed bottom-0 w-full flex justify-around bg-white shadow-md py-2 rounded-xl md:hidden">
+        <div class="bg-green-600 rounded-xl w-10 text-center"> <i class="fa-solid fa-house text-xl cursor-pointer"></i>
+        </div> <i class="fa-regular fa-heart text-xl cursor-pointer"></i> <i
+            class="fa-solid fa-location-dot text-xl cursor-pointer"></i>
+        <a href="profile.html"><i class="fa-regular fa-user text-xl cursor-pointer"></i></a>
     </nav>
 
 
-
-        <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
