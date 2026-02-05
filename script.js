@@ -17,27 +17,45 @@ function afficherCards(tripsArray) {
     container.innerHTML = "";
     tripsArray.forEach(trip => {
         container.innerHTML += `
-        <div class="mx-5 w-[350px] h-[150px] md:w-[250px] mb-14">
-            <div class="absolute right-5 mb-10 flex gap-2 ">
-                <button onclick="editTrip(${trip.id}) ">
-                    <i class="fa-solid fa-pen text-blue-600"></i>
+        <div class="mx-5 w-[350px] md:w-[250px] mb-14 relative">
+
+            
+            <div
+              class="absolute top-2 right-2 
+                     flex 
+                    
+                     p-1 rounded-xl shadow-md">
+
+                <button
+                  onclick="editTrip(${trip.id})"
+                  class="w-6 h-4 flex items-center justify-center
+                         rounded-full">
+                    <i class="fa-solid fa-pen text-blue-600 text-sm"></i>
                 </button>
-                <button onclick="deleteTrip(${trip.id})">
-                    <i class="fa-solid fa-trash text-red-600"></i>
+
+                <button
+                  onclick="deleteTrip(${trip.id})"
+                  class="w-6 h-4 flex items-center justify-center
+                         rounded-full">
+                    <i class="fa-solid fa-trash text-red-600 text-sm"></i>
                 </button>
             </div>
-            <div class="bg-cover bg-center rounded-xl shadow-xl w-full h-full"
+
+            <!-- Image -->
+            <div class="h-[150px] bg-cover bg-center rounded-xl shadow-xl w-full"
                  style="background-image:url('${trip.image}')"></div>
+
+            <!-- Infos -->
             <h6 class="font-semibold mt-1">${trip.title}</h6>
             <p class="text-sm">To: ${trip.Destination}</p>
             <p class="text-sm">Date: ${trip.Date}</p>
             <p class="text-sm">Note: ${trip.Note}</p>
-            
+
         </div>
-        <div class="w-14 mt-24"> </div>
         `;
     });
 }
+
 
 afficherCards(trips);
 
@@ -66,20 +84,17 @@ function editTrip(id) {
     
     
 }
-
 function AddForm() {
     let btnAdd = document.getElementById("btnAdd");
     btnAdd.addEventListener("click", () => {
         form.classList.toggle("hidden");
     });
-
     document.getElementById("trip-form").addEventListener("submit", function (e) {
     e.preventDefault();
 
     if (edtiId !== null) {
         
         const trip = trips.find(t => t.id === edtiId);
-
         trip.title = e.target.title.value;
         trip.Destination = e.target.dis.value;
         trip.Date = e.target.Date.value;
