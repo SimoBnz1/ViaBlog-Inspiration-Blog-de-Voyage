@@ -23,16 +23,13 @@ function afficherCards(tripsArray) {
             <div
               class="absolute top-2 right-2 
                      flex 
-                    
                      p-1 rounded-xl shadow-md">
-
                 <button
                   onclick="editTrip(${trip.id})"
                   class="w-6 h-4 flex items-center justify-center
                          rounded-full">
                     <i class="fa-solid fa-pen text-blue-600 text-sm"></i>
                 </button>
-
                 <button
                   onclick="deleteTrip(${trip.id})"
                   class="w-6 h-4 flex items-center justify-center
