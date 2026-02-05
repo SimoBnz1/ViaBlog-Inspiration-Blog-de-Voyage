@@ -2,7 +2,9 @@ let trips = [
     {
         id: 1,
         title: "Yellow River",
-        author: "Joan Garcia",
+        Destination: "Kech",
+        Date:Date(),
+        Note:5,
         image: "/assets/4.png",
         category: "River"
     }
@@ -15,7 +17,7 @@ function afficherCards(tripsArray) {
     container.innerHTML = "";
     tripsArray.forEach(trip => {
         container.innerHTML += `
-        <div class="mx-5 w-[350px] h-[150px] md:w-[250px] mt-16 mb-14">
+        <div class="mx-5 w-[350px] h-[150px] md:w-[250px] mb-14">
             <div class="absolute right-5 mb-10 flex gap-2 ">
                 <button onclick="editTrip(${trip.id}) ">
                     <i class="fa-solid fa-pen text-blue-600"></i>
@@ -27,8 +29,12 @@ function afficherCards(tripsArray) {
             <div class="bg-cover bg-center rounded-xl shadow-xl w-full h-full"
                  style="background-image:url('${trip.image}')"></div>
             <h6 class="font-semibold mt-1">${trip.title}</h6>
-            <p class="text-sm">by ${trip.author}</p>
+            <p class="text-sm">To: ${trip.Destination}</p>
+            <p class="text-sm">Date: ${trip.Date}</p>
+            <p class="text-sm">Note: ${trip.Note}</p>
+            
         </div>
+        <div class="w-14 mt-24"> </div>
         `;
     });
 }
@@ -47,8 +53,17 @@ function deleteTrip(id) {
     afficherCards(trips);
 
 }
+
+let edtiId=null;
+
 function editTrip(id) {
-    trips=trips.filter(t)
+  const   trip=trips.filter(t=>t.id===id);
+    if(!trip) return;
+
+    edtiId=id;
+
+    form.classList.remove("hidden");
+    
     
 }
 
@@ -59,21 +74,39 @@ function AddForm() {
     });
 
     document.getElementById("trip-form").addEventListener("submit", function (e) {
-        e.preventDefault();
+    e.preventDefault();
 
+    if (edtiId !== null) {
+        
+        const trip = trips.find(t => t.id === edtiId);
+
+        trip.title = e.target.title.value;
+        trip.Destination = e.target.dis.value;
+        trip.Date = e.target.Date.value;
+        trip.Note = e.target.Note.value;
+        trip.image = e.target.image.value;
+        trip.category = e.target.category.value;
+
+        edtiId = null;
+    } else {
+        
         const newTrip = {
             id: trips.length + 1,
             title: e.target.title.value,
-            author: e.target.author.value,
+            Destination : e.target.dis.value,
+            Date : e.target.Date.value,
+            Note : e.target.Note.value,
             image: e.target.image.value,
             category: e.target.category.value
         };
-
         trips.push(newTrip);
-        afficherCards(trips);
-        e.target.reset();
-        form.classList.add("hidden"); 
-    });
+    }
+
+    afficherCards(trips);
+    e.target.reset();
+    form.classList.add("hidden");
+});
 }
+
 
 AddForm();
