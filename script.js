@@ -17,37 +17,22 @@ function afficherCards(tripsArray) {
     container.innerHTML = "";
     tripsArray.forEach(trip => {
         container.innerHTML += `
-        <div class="mx-5 w-[350px] md:w-[250px] mb-14 relative">
-
-            
+        <div class="mx-5 w-[350px] md:w-[250px] mb-14 relative"> 
             <div
-              class="absolute top-2 right-2 
-                     flex 
-                     p-1 rounded-xl shadow-md">
-                <button
-                  onclick="editTrip(${trip.id})"
-                  class="w-6 h-4 flex items-center justify-center
-                         rounded-full">
+              class="absolute top-2 right-2 flex p-1 rounded-xl shadow-md">
+                <button onclick="editTrip(${trip.id})" class="w-6 h-4 flex items-center justify-center rounded-full">
                     <i class="fa-solid fa-pen text-blue-600 text-sm"></i>
                 </button>
-                <button
-                  onclick="deleteTrip(${trip.id})"
-                  class="w-6 h-4 flex items-center justify-center
-                         rounded-full">
+                <button onclick="deleteTrip(${trip.id})" class="w-6 h-4 flex items-center justify-center rounded-full">
                     <i class="fa-solid fa-trash text-red-600 text-sm"></i>
                 </button>
             </div>
-
-            <!-- Image -->
             <div class="h-[150px] bg-cover bg-center rounded-xl shadow-xl w-full"
                  style="background-image:url('${trip.image}')"></div>
-
-            <!-- Infos -->
             <h6 class="font-semibold mt-1">${trip.title}</h6>
             <p class="text-sm">To: ${trip.Destination}</p>
             <p class="text-sm">Date: ${trip.Date}</p>
             <p class="text-sm">Note: ${trip.Note}</p>
-
         </div>
         `;
     });
